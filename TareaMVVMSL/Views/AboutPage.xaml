@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:TallerApuntesSebastianLargo.Models"
+             x:Class="TallerApuntesSebastianLargo.Views.AboutPage"
+             Title="AboutPage">
+    <ContentPage.BindingContext>
+        <models:About />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="15" Margin="10">
+        <!-- Ícono personal -->
+        <Image Source="{Binding Icon}" SemanticProperties.Description="Mi ícono personal" HeightRequest="100" />
+
+        <!-- Nombre -->
+        <Label Text="{Binding Name}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        <!-- Descripción personal -->
+        <Label Text="{Binding Description}" FontSize="18" HorizontalOptions="Center" TextColor="Gray" />
+
+        <!-- Botón para más información -->
+        <Button Text="Aprende más..." Clicked="LearnMore_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>
