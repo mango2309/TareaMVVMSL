@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:TareaMVVMSL.ViewModels"
              x:Class="TareaMVVMSL.Views.AllNotesPage"
-             Title="AllNotesPage">
+             Title="AllNotesPage"
+             NavigatedTo="ContentPage_NavigatedTo">
 
     <ContentPage.BindingContext>
         <viewModels:NotesViewModel />

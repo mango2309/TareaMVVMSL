@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:TallerApuntesSebastianLargo.Models"
-             x:Class="TallerApuntesSebastianLargo.Views.AboutPage"
+             xmlns:viewModels="clr-namespace:TareaMVVMSL.ViewModels"
+             x:Class="TareaMVVMSL.Views.AboutPage"
              Title="AboutPage">
+    
     <ContentPage.BindingContext>
-        <models:About />
+        <viewModels:AboutViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout Spacing="15" Margin="10">
-        <!-- Ícono personal -->
-        <Image Source="{Binding Icon}" SemanticProperties.Description="Mi ícono personal" HeightRequest="100" />
 
-        <!-- Nombre -->
-        <Label Text="{Binding Name}" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <HorizontalStackLayout Spacing="10">
+            <Image Source="dotnet_bot.png"
+                   SemanticProperties.Description="The dot net bot waving hello!"
+                   HeightRequest="64" />
+            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
+            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
+        </HorizontalStackLayout>
 
-        <!-- Descripción personal -->
-        <Label Text="{Binding Description}" FontSize="18" HorizontalOptions="Center" TextColor="Gray" />
-
-        <!-- Botón para más información -->
-        <Button Text="Aprende más..." Clicked="LearnMore_Clicked" />
+        <Label Text="{Binding Message}" />
+        <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" />
     </VerticalStackLayout>
+    
 </ContentPage>
