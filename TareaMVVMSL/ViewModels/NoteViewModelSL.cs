@@ -9,9 +9,9 @@ using System.Windows.Input;
 
 namespace TareaMVVMSL.ViewModels
 {
-    internal class NoteViewModel : ObservableObject, IQueryAttributable
+    internal class NoteViewModelSL : ObservableObject, IQueryAttributable
     {
-        private Models.Note _note;
+        private Models.NoteSL _note;
 
         public string Text
         {
@@ -33,14 +33,14 @@ namespace TareaMVVMSL.ViewModels
         public ICommand SaveCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
 
-        public NoteViewModel()
+        public NoteViewModelSL()
         {
-            _note = new Models.Note();
+            _note = new Models.NoteSL();
             SaveCommand = new AsyncRelayCommand(Save);
             DeleteCommand = new AsyncRelayCommand(Delete);
         }
 
-        public NoteViewModel(Models.Note note)
+        public NoteViewModelSL(Models.NoteSL note)
         {
             _note = note;
             SaveCommand = new AsyncRelayCommand(Save);
@@ -64,14 +64,14 @@ namespace TareaMVVMSL.ViewModels
         {
             if (query.ContainsKey("load"))
             {
-                _note = Models.Note.Load(query["load"].ToString());
+                _note = Models.NoteSL.Load(query["load"].ToString());
                 RefreshProperties();
             }
         }
 
         public void Reload()
         {
-            _note = Models.Note.Load(_note.Filename);
+            _note = Models.NoteSL.Load(_note.Filename);
             RefreshProperties();
         }
 

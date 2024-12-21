@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:TareaMVVMSL.ViewModels"
              x:Class="TareaMVVMSL.Views.AllNotesPage"
-             Title="AllNotesPage"
+             Title="Todas las Notas"
              NavigatedTo="ContentPage_NavigatedTo">
 
     <ContentPage.BindingContext>
-        <viewModels:NotesViewModel />
+        <viewModels:NotesViewModelSL />
     </ContentPage.BindingContext>
 
     <!-- Add an item to the toolbar -->
